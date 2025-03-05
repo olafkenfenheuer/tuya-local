@@ -1,0 +1,77 @@
+name: Lumiere Controller B-208
+products:
+  - id: bf811d221d400f0d8b2evp
+    manufacturer: Lumiere
+    model: B-208
+entities:
+  - entity: light
+    dps:
+      - id: 20
+        type: boolean
+        name: switch
+      - id: 22
+        name: brightness
+        type: integer
+        optional: true
+        step: 1
+        range:
+          min: 10
+          max: 1000
+        mapping:
+          - dps_val: null
+            value: 0
+      - id: 23
+        name: color_temp
+        type: integer
+        precision: 0
+        optional: true
+        
+        range:
+          min: 2000
+          max: 6535
+        mapping:
+          - target_range:
+            min: 0
+            max: 1000
+      - id: 25
+        name: scene_data
+        type: hex
+        optional: true
+      - id: 27
+        name: music_data
+        type: hex
+        optional: true
+      - id: 28
+        name: control_data
+        type: hex
+        optional: true
+      - id: 30
+        name: rhythm_mode
+        type: base64
+        optional: true
+      - id: 31
+        name: sleep_mode
+        type: base64
+        optional: true
+      - id: 32
+        name: wakeup_mode
+        type: base64
+        optional: true
+  - entity: number
+    translation_key: timer
+    class: duration
+    category: config
+    dps:
+      - id: 26
+        name: value
+        type: integer
+        optional: true
+        range:
+          min: 0
+          max: 86400
+        unit: min
+        mapping:
+          - scale: 60
+            step: 60
+          - dps_val: null
+
