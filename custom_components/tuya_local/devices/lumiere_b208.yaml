@@ -25,14 +25,14 @@ entities:
         type: integer
         precision: 0
         optional: true
-        
         range:
-          min: 2000
-          max: 6535
+          min: 10
+#          max: 1000
         mapping:
           - target_range:
-            min: 0
-            max: 1000
+            scale: 0.14285
+            min: 2000
+            max: 6535
       - id: 25
         name: scene_data
         type: hex
