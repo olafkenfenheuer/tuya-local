@@ -162,6 +162,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "Klimaanlage",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -217,6 +218,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "Heizung",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "Heizstufe",
@@ -316,7 +318,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "Entfeuchter",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "Reinigen",
+                            "dehumidify": "Entfeuchten"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "Ventilator",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -327,6 +341,7 @@
                             "fresh": "Frisch",
                             "smart": "Intelligent",
                             "strong": "Stark",
+                            "custom": "Benutzerdefiniert",
                             "high": "Hoch",
                             "medium": "Mittel",
                             "low": "Niedrig",
@@ -404,12 +419,45 @@
                     "gbp": "GBP"
                 }
             },
+            "heat_pump_mode": {
+                "name": "Wärmepumpenmodus",
+                "state": {
+                    "heat": "Heizen",
+                    "cool": "Kühlen",
+                    "auto": "Auto",
+                    "floor_heat": "Bodenheizung",
+                    "off": "Aus",
+                    "hotwater": "Warmwasser",
+                    "hotwater_cool": "Warmwasser Kühlen",
+                    "hotwater_heat": "Warmwasser Heizen",
+                    "hotwater_auto": "Warmwasser Auto",
+                    "hotwater_floor_heat": "Warmwasser Bodenheizung"
+                }
+            },
             "initial_state": {
                 "name": "Startzustand",
                 "state": {
                     "off": "Aus",
                     "on": "An",
                     "memory": "Speicher"
+                }
+            },
+            "kettle_mode": {
+                "name": "Kesselmodus",
+                "state": {
+                    "off": "Aus",
+                    "heat": "Heizen",
+                    "boil": "Kochen",
+                    "quick_heat": "Schnellheizen",
+                    "quick_boil": "Schnellkochen",
+                    "keep_warm": "Warmhalten",
+                    "custom": "Benutzerdefiniert",
+                    "dechlorinate": "Entchlorieren",
+                    "black_tea": "Schwarzer Tee",
+                    "green_tea": "Grüner Tee",
+                    "coffee": "Kaffee",
+                    "honey_water": "Honigwasser",
+                    "infant_formula": "Babynahrung"
                 }
             },
             "language": {
@@ -428,6 +476,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "Lichtmodus",
+                "state": {
+                    "off": "Aus",
+                    "on": "An",
+                    "state": "Zustand",
+                    "locator": "Locator"
                 }
             },
             "mopping": {
@@ -491,6 +548,9 @@
                 "state": {
                     "cancel": "Abbrechen",
                     "continuous": "Dauerbetrieb",
+                    "30s": "30 Sekunden",
+                    "1m": "1 Minute",
+                    "2m": "2 Minuten",
                     "5m": "5 Minuten",
                     "10m": "10 Minuten",
                     "20m": "20 Minuten",
@@ -660,7 +720,12 @@
                     "starting": "Starten",
                     "emptying": "Leeren",
                     "resetting": "Zurücksetzen",
-                    "reverse": "Rückwärts"
+                    "reverse": "Rückwärts",
+                    "full": "Voll",
+                    "empty": "Leer",
+                    "missing": "Fehlend",
+                    "formatting": "Formatieren",
+                    "unformatted": "Unformatiert"
                 }
             },
             "time_remaining": {
@@ -741,6 +806,22 @@
         "text": {
             "scene": {
                 "name": "Szene"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "Timer"
+            },
+            "timer_x": {
+                "name": "Timer {x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "Wasserkocher"
+            },
+            "kettle": {
+                "name": "Wasserkocher"
             }
         }
     }

@@ -162,6 +162,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "Klimatyzacja",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -217,6 +218,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "Podgrzewacz",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "Poziom ogrzewania",
@@ -317,7 +319,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "Osuszacz",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "Oczyszczanie",
+                            "dehumidify": "Osuszanie"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "Wentylator",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -328,6 +342,7 @@
                             "fresh": "Świeży",
                             "smart": "Inteligentny",
                             "strong": "Silny",
+                            "custom": "Niestandardowy",
                             "high": "Wysoki",
                             "medium": "Średni",
                             "low": "Niski",
@@ -405,12 +420,45 @@
                     "gbp": "GBP"
                 }
             },
+            "heat_pump_mode": {
+                "name": "Tryb pompy ciepła",
+                "state": {
+                    "heat": "Ogrzewanie",
+                    "cool": "Chłodzenie",
+                    "auto": "Auto",
+                    "floor_heat": "Ogrzewanie podłogi",
+                    "off": "Wyłączony",
+                    "hotwater": "Podgrzewanie wody",
+                    "hotwater_cool": "Podgrzewanie wody i chłodzenie",
+                    "hotwater_heat": "Podgrzewanie wody i ogrzewanie",
+                    "hotwater_auto": "Podgrzewanie wody i auto",
+                    "hotwater_floor_heat": "Podgrzewanie wody i ogrzewanie podłogi"
+                }
+            },
             "initial_state": {
                 "name": "Stan początkowy",
                 "state": {
                     "off": "Wyłączony",
                     "on": "Włączony",
                     "memory": "Pamięć"
+                }
+            },
+            "kettle_mode": {
+                "name": "Tryb czajnika",
+                "state": {
+                    "off": "Wyłączony",
+                    "heat": "Ogrzewanie",
+                    "boil": "Gotowanie",
+                    "quick_heat": "Szybkie ogrzewanie",
+                    "quick_boil": "Szybkie gotowanie",
+                    "keep_warm": "Podgrzewanie",
+                    "custom": "Niestandardowy",
+                    "dechlorinate": "Odchlorowanie",
+                    "black_tea": "Czarna herbata",
+                    "green_tea": "Zielona herbata",
+                    "coffee": "Kawa",
+                    "honey_water": "Woda z miodem",
+                    "infant_formula": "Mleko dla niemowląt"
                 }
             },
             "language": {
@@ -429,6 +477,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "Tryb światła",
+                "state": {
+                    "off": "Wyłączony",
+                    "on": "Włączony",
+                    "state": "Stan",
+                    "locator": "Lokalizator"
                 }
             },
             "mopping": {
@@ -492,6 +549,9 @@
                 "state": {
                     "cancel": "Anuluj",
                     "continuous": "Ciągły",
+                    "30s": "30 sekund",
+                    "1m": "1 minuta",
+                    "2m": "2 minuty",
                     "5m": "5 minut",
                     "10m": "10 minut",
                     "20m": "20 minut",
@@ -661,7 +721,12 @@
                     "starting": "Uruchamianie",
                     "emptying": "Opróżnianie",
                     "resetting": "Resetowanie",
-                    "reverse": "Odwrócone"
+                    "reverse": "Odwrócone",
+                    "full": "Pełne",
+                    "empty": "Puste",
+                    "missing": "Brakujące",
+                    "formatting": "Formatowanie",
+                    "unformatted": "Niezformatowane"
                 }
             },
             "time_remaining": {
@@ -742,6 +807,22 @@
         "text": {
             "scene": {
                 "name": "Scena"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "Regulator czasowy"
+            },
+            "timer_x": {
+                "name": "Regulator czasowy {x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "Podgrzewacz wody"
+            },
+            "kettle": {
+                "name": "Czajnik"
             }
         }
     }

@@ -1,7 +1,7 @@
-name: AirBox
-# products:
-#   - id: bf2cd2e61dc121e657jsbj
-#     model: MT15/MT29
+name: Air quality monitor
+products:
+  - id: ohrikjoih1cat641
+    model: PTH9BW
 entities:
   - entity: sensor
     translation_key: air_quality
@@ -23,8 +23,10 @@ entities:
       - id: 2
         type: integer
         name: sensor
-        unit: C
         class: measurement
+        unit: C
+        mapping:
+          - scale: 10
   - entity: sensor
     class: humidity
     dps:
@@ -34,7 +36,7 @@ entities:
         unit: "%"
         class: measurement
   - entity: sensor
-    class: carbon_monoxide
+    class: carbon_dioxide
     dps:
       - id: 4
         type: integer
@@ -42,28 +44,30 @@ entities:
         unit: ppm
         class: measurement
   - entity: sensor
-    name: Formaldehyde
+    name: HCHO
     class: volatile_organic_compounds
     dps:
       - id: 5
         type: integer
         name: sensor
-        unit: µg/m³
+        unit: ugm3
         class: measurement
         mapping:
-          - scale: 1000
+          - scale: 0.1
+  - entity: sensor
+    class: volatile_organic_compounds
+    dps:
+      - id: 6
+        type: integer
+        name: sensor
+        unit: ugm3
+        class: measurement
+        mapping:
+          - scale: 0.1
   - entity: sensor
     class: pm25
     dps:
       - id: 7
-        type: integer
-        name: sensor
-        unit: µg/m³
-        class: measurement
-  - entity: sensor
-    class: pm1
-    dps:
-      - id: 8
         type: integer
         name: sensor
         unit: µg/m³
@@ -85,17 +89,23 @@ entities:
         name: sensor
         unit: "%"
         class: measurement
-  - entity: binary_sensor
-    class: plug
-    category: diagnostic
+  - entity: select
+    name: Alarm Ringtone
+    icon: "mdi:signal"
+    category: config
     dps:
-      - id: 23
-        type: boolean
-        name: sensor
-  - entity: switch
-    icon: "mdi:sprout"
-    name: Enable alarm
-    dps:
-      - id: 106
-        type: boolean
-        name: switch
+      - id: 29
+        type: string
+        name: option
+        optional: true
+        mapping:
+          - dps_val: "ringtone_1"
+            value: "ringtone_1"
+          - dps_val: "ringtone_2"
+            value: "ringtone_2"
+          - dps_val: "ringtone_3"
+            value: "ringtone_3"
+          - dps_val: "ringtone_4"
+            value: "ringtone_4"
+          - dps_val: "ringtone_5"
+            value: "ringtone_5"

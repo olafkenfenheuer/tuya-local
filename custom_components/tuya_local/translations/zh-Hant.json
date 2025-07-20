@@ -162,6 +162,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "空調",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -217,6 +218,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "加热器",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "加熱水平",
@@ -318,7 +320,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "除濕機",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "淨化",
+                            "dehumidify": "除濕"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "風扇",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -329,6 +343,7 @@
                             "sleep": "睡眠",
                             "smart": "智能",
                             "strong": "強勁",
+                            "custom": "自訂",
                             "high": "高",
                             "medium": "中",
                             "low": "低",
@@ -406,12 +421,45 @@
                     "gbp": "英鎊"
                 }
             },
+            "heat_pump_mode": {
+                "name": "熱泵模式",
+                "state": {
+                    "heat": "加熱",
+                    "cool": "冷卻",
+                    "auto": "自動",
+                    "floor_heat": "地板加熱",
+                    "off": "關",
+                    "hotwater": "熱水",
+                    "hotwater_cool": "熱水冷卻",
+                    "hotwater_heat": "熱水加熱",
+                    "hotwater_auto": "熱水自動",
+                    "hotwater_floor_heat": "熱水地板加熱"
+                }
+            },
             "initial_state": {
                 "name": "初始狀態",
                 "state": {
                     "off": "關",
                     "on": "開",
                     "memory": "記憶"
+                }
+            },
+            "kettle_mode": {
+                "name": "水壺模式",
+                "state": {
+                    "off": "關",
+                    "heat": "加熱",
+                    "boil": "煮沸",
+                    "quick_heat": "快速加熱",
+                    "quick_boil": "快速煮沸",
+                    "keep_warm": "保溫",
+                    "custom": "自訂",
+                    "dechlorinate": "除氯",
+                    "black_tea": "紅茶",
+                    "green_tea": "綠茶",
+                    "coffee": "咖啡",
+                    "honey_water": "蜂蜜水",
+                    "infant_formula": "嬰兒配方奶"
                 }
             },
             "language": {
@@ -430,6 +478,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "燈光模式",
+                "state": {
+                    "off": "關",
+                    "on": "開",
+                    "state": "狀態",
+                    "locator": "定位"
                 }
             },
             "mopping": {
@@ -493,6 +550,9 @@
                 "state": {
                     "cancel": "取消",
                     "continuous": "連續",
+                    "30s": "30秒",
+                    "1m": "1分鐘",
+                    "2m": "2分鐘",
                     "5m": "5分鐘",
                     "10m": "10分鐘",
                     "20m": "20分鐘",
@@ -661,7 +721,12 @@
                     "starting": "啟動中",
                     "emptying": "排空中",
                     "resetting": "重置中",
-                    "reverse": "反轉中"
+                    "reverse": "反轉中",
+                    "full": "滿",
+                    "empty": "空",
+                    "missing": "缺失",
+                    "formatting": "格式化中",
+                    "unformatted": "未格式化"
                 }
             },
             "time_remaining": {
@@ -742,6 +807,22 @@
         "text": {
             "scene": {
                 "name": "場景"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "計時器"
+            },
+            "timer_x": {
+                "name": "計時器{x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "熱水器"
+            },
+            "kettle": {
+                "name": "水壺"
             }
         }
     }

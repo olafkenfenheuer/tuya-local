@@ -88,6 +88,13 @@ def _remove_duplicates(seq):
     return [x for x in seq if not (x in seen or adder(x))]
 
 
+def to_signed(val, bits):
+    """Convert unsigned int to signed 2's complement of given bit length."""
+    if val & (1 << (bits - 1)):
+        return val - (1 << bits)
+    return val
+
+
 class TuyaDeviceConfig:
     """Representation of a device config for Tuya Local devices."""
 
@@ -125,6 +132,12 @@ class TuyaDeviceConfig:
     @property
     def primary_entity(self):
         """Return the primary type of entity for this device."""
+        if "primary_entity" not in self._config:
+            # primary entity is a deprecated fallback, so if it is
+            # missing, we need to log a warning about the missing entities
+            # list.
+            _LOGGER.error(f"{self.config_type}.yaml does not define an entities list.")
+            return TuyaEntityConfig(self, self._config["entities"][0])
         if not self._reported_deprecated_primary:
             _LOGGER.warning(
                 f"{self.config_type}.yaml distinguishes between primary"
@@ -366,7 +379,7 @@ class TuyaEntityConfig:
                     self._device.config_type,
                     self.name,
                 )
-            hidden = device.has_returned_state and not self.available(device)
+            hidden = not self.available(device)
         return not hidden and not self.deprecated
 
 
@@ -467,7 +480,15 @@ class TuyaDpsConfig:
         if mask and isinstance(bytevalue, bytes):
             value = int.from_bytes(bytevalue, self.endianness)
             scale = mask & (1 + ~mask)
-            return self._map_from_dps((value & mask) // scale, device)
+            raw_result = (value & mask) // scale
+
+            # Insert signed interpretation here
+            if self._config.get("mask_signed", False):
+                # Count how many bits are set in the mask
+                bit_count = mask.bit_count()
+                raw_result = to_signed(raw_result, bit_count)
+
+            return self._map_from_dps(raw_result, device)
         else:
             return self._map_from_dps(device.get_property(self.id), device)
 

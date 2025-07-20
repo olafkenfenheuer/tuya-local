@@ -97,7 +97,7 @@ class TuyaLocalDevice(object):
         except Exception as e:
             _LOGGER.error(
                 "%s: %s while initialising device %s",
-                type(e),
+                type(e).__name__,
                 e,
                 dev_id,
             )
@@ -287,6 +287,7 @@ class TuyaLocalDevice(object):
             self._api.parent.set_socketPersistent(persist)
 
         while self._running:
+            error_count = self._api_working_protocol_failures
             try:
                 last_cache = self._cached_state.get("updated_at", 0)
                 now = time()
@@ -336,7 +337,10 @@ class TuyaLocalDevice(object):
 
                 if poll:
                     if "Error" in poll:
-                        if self._api_working_protocol_failures == 0:
+                        # increment the error count if not done already
+                        if error_count == self._api_working_protocol_failures:
+                            self._api_working_protocol_failures += 1
+                        if self._api_working_protocol_failures == 1:
                             _LOGGER.warning(
                                 "%s error reading: %s", self.name, poll["Error"]
                             )
@@ -369,7 +373,7 @@ class TuyaLocalDevice(object):
                 _LOGGER.exception(
                     "%s receive loop error %s:%s",
                     self.name,
-                    type(t),
+                    type(t).__name__,
                     t,
                 )
                 self._api.set_socketPersistent(False)
@@ -606,7 +610,7 @@ class TuyaLocalDevice(object):
             except Exception as e:
                 _LOGGER.debug(
                     "Retrying after exception %s %s (%d/%d)",
-                    type(e),
+                    type(e).__name__,
                     e,
                     i,
                     connections,

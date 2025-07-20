@@ -162,6 +162,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "Климатик",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -217,6 +218,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "Нагревател",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "Ниво на отопление",
@@ -317,7 +319,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "Обезвлажнител",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "Пречистете",
+                            "dehumidify": "Обезвлажняване"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "Вентилатор",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -328,6 +342,7 @@
                             "fresh": "Свежо",
                             "smart": "Умен",
                             "strong": "Силен",
+                            "custom": "Потребителски",
                             "high": "Високо",
                             "medium": "Средно",
                             "low": "Ниско",
@@ -405,12 +420,45 @@
                     "gbp": "GBP"
                 }
             },
+            "heat_pump_mode": {
+                "name": "Режим на топлинна помпа",
+                "state": {
+                    "heat": "Нагряване",
+                    "cool": "Охлаждане",
+                    "auto": "Автоматично",
+                    "floor_heat": "Подово отопление",
+                    "off": "Изключено",
+                    "hotwater": "Гореща вода",
+                    "hotwater_cool": "Гореща вода и охлаждане",
+                    "hotwater_heat": "Гореща вода и отопление",
+                    "hotwater_auto": "Гореща вода и автоматично",
+                    "hotwater_floor_heat": "Гореща вода и подово отопление"
+                }
+            },
             "initial_state": {
                 "name": "Начално състояние",
                 "state": {
                     "off": "Изключено",
                     "on": "Включено",
                     "memory": "Памет"
+                }
+            },
+            "kettle_mode": {
+                "name": "Режим на чайник",
+                "state": {
+                    "off": "Изключено",
+                    "heat": "Нагряване",
+                    "boil": "Кипене",
+                    "quick_heat": "Бързо загряване",
+                    "quick_boil": "Бързо кипене",
+                    "keep_warm": "Поддържайте топло",
+                    "custom": "Потребителски",
+                    "dechlorinate": "Дехлориране",
+                    "black_tea": "Черно чай",
+                    "green_tea": "Зелен чай",
+                    "coffee": "Кафе",
+                    "honey_water": "Меден вода",
+                    "infant_formula": "Бебешка формула"
                 }
             },
             "language": {
@@ -429,6 +477,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "Режим на светлина",
+                "state": {
+                    "off": "Изключено",
+                    "on": "Включено",
+                    "state": "Състояние",
+                    "locator": "Локатор"
                 }
             },
             "mopping": {
@@ -492,6 +549,9 @@
                 "state": {
                     "cancel": "Отказ",
                     "continuous": "Непрекъснато",
+                    "30s": "30 секунди",
+                    "1m": "1 минута",
+                    "2m": "2 минути",
                     "5m": "5 минути",
                     "10m": "10 минути",
                     "20m": "20 минути",
@@ -661,7 +721,12 @@
                     "starting": "Стартиране",
                     "emptying": "Изтощаване",
                     "resetting": "Нулиране",
-                    "reverse": "Обратно"
+                    "reverse": "Обратно",
+                    "full": "Пълен",
+                    "empty": "Празен",
+                    "missing": "Липсва",
+                    "formatting": "Форматиране",
+                    "unformatted": "Неформатиран"
                 }
             },
             "time_remaining": {
@@ -742,6 +807,22 @@
         "text": {
             "scene": {
                 "name": "Сцена"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "Таймер"
+            },
+            "timer_x": {
+                "name": "Таймер {x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "Нагревател на вода"
+            },
+            "kettle": {
+                "name": "Кана"
             }
         }
     }

@@ -162,6 +162,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "Klimatizace",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -217,6 +218,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "Ohřívač",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "Úroveň vytápění",
@@ -317,7 +319,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "Odvlhčovač",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "Očistit",
+                            "dehumidify": "Odvlhčovat"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "Ventilátor",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -328,6 +342,7 @@
                             "fresh": "Svěží",
                             "smart": "Chytrý",
                             "strong": "Silný",
+                            "custom": "Vlastní",
                             "high": "Vysoký",
                             "medium": "Střední",
                             "low": "Nízký",
@@ -405,12 +420,45 @@
                     "gbp": "GBP"
                 }
             },
+            "heat_pump_mode": {
+                "name": "Režim tepelného čerpadla",
+                "state": {
+                    "heat": "Ohřátí",
+                    "cool": "Chlazení",
+                    "auto": "Auto",
+                    "floor_heat": "Tepelná podlaha",
+                    "off": "Vypnuto",
+                    "hotwater": "Horká voda",
+                    "hotwater_cool": "Horká voda chlazení",
+                    "hotwater_heat": "Horká voda ohřátí",
+                    "hotwater_auto": "Horká voda auto",
+                    "hotwater_floor_heat": "Horká voda tepelná podlaha"
+                }
+            },
             "initial_state": {
                 "name": "Počáteční stav",
                 "state": {
                     "off": "Vypnuto",
                     "on": "Zapnuto",
                     "memory": "Paměť"
+                }
+            },
+            "kettle_mode": {
+                "name": "Režim konvice",
+                "state": {
+                    "off": "Vypnuto",
+                    "heat": "Ohřátí",
+                    "boil": "Vaření",
+                    "quick_heat": "Rychlé ohřátí",
+                    "quick_boil": "Rychlé vaření",
+                    "keep_warm": "Udržování tepla",
+                    "custom": "Vlastní",
+                    "dechlorinate": "Odstranění chlóru",
+                    "black_tea": "Černý čaj",
+                    "green_tea": "Zelený čaj",
+                    "coffee": "Káva",
+                    "honey_water": "Med",
+                    "infant_formula": "Dětská výživa"
                 }
             },
             "language": {
@@ -429,6 +477,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "Režim světla",
+                "state": {
+                    "off": "Vypnuto",
+                    "on": "Zapnuto",
+                    "state": "Stav",
+                    "locator": "Lokalizátor"
                 }
             },
             "mopping": {
@@ -492,6 +549,9 @@
                 "state": {
                     "cancel": "Zrušit",
                     "continuous": "Nepřetržitý",
+                    "30s": "30 sekund",
+                    "1m": "1 minuta",
+                    "2m": "2 minuty",
                     "5m": "5 minut",
                     "10m": "10 minut",
                     "20m": "20 minut",
@@ -660,7 +720,12 @@
                     "starting": "Začíná",
                     "emptying": "Vyprazdňování",
                     "resetting": "Resetování",
-                    "reverse": "Obrácený"
+                    "reverse": "Obrácený",
+                    "full": "Plný",
+                    "empty": "Prázdný",
+                    "missing": "Chybí",
+                    "formatting": "Formátování",
+                    "unformatted": "Neformátováno"
                 }
             },
             "time_remaining": {
@@ -741,6 +806,22 @@
         "text": {
             "scene": {
                 "name": "Scéna"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "Časovač"
+            },
+            "timer_x": {
+                "name": "Časovač {x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "Ohřívač vody"
+            },
+            "kettle": {
+                "name": "Konvice"
             }
         }
     }

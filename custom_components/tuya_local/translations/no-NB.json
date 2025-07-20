@@ -163,6 +163,7 @@
         },
         "climate": {
             "aircon_extra": {
+                "name": "Klimaanlegg",
                 "state_attributes": {
                     "fan_mode": {
                         "state": {
@@ -218,6 +219,7 @@
                 }
             },
             "swing_as_powerlevel": {
+                "name": "Varmeapparat",
                 "state_attributes": {
                     "swing_mode": {
                         "name": "Varme nivå",
@@ -318,7 +320,19 @@
                     }
                 }
             },
+            "dehumidifier": {
+                "name": "Avfukter",
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "purify": "Rens",
+                            "dehumidify": "Avfukte"
+                        }
+                    }
+                }
+            },
             "fan_with_presets": {
+                "name": "Vifte",
                 "state_attributes": {
                     "preset_mode": {
                         "state": {
@@ -329,6 +343,7 @@
                             "fresh": "Fresh",
                             "smart": "Smart",
                             "strong": "Sterk",
+                            "custom": "Egendefinert",
                             "high": "Høy",
                             "medium": "Medium",
                             "low": "Lav",
@@ -406,12 +421,45 @@
                     "gbp": "GBP"
                 }
             },
+            "heat_pump_mode": {
+                "name": "Varme pumpe modus",
+                "state": {
+                    "heat": "Varm",
+                    "cool": "Kald",
+                    "auto": "Auto",
+                    "floor_heat": "Gulvvarme",
+                    "off": "Av",
+                    "hotwater": "Varmt vann",
+                    "hotwater_cool": "Varmt vann og kald",
+                    "hotwater_heat": "Varmt vann og varmt",
+                    "hotwater_auto": "Varmt vann og auto",
+                    "hotwater_floor_heat": "Varmt vann og gulvvarme"
+                }
+            },
             "initial_state": {
                 "name": "Starttilstand",
                 "state": {
                     "off": "Av",
                     "on": "På",
                     "memory": "Minne"
+                }
+            },
+            "kettle_mode": {
+                "name": "Kjelemodus",
+                "state": {
+                    "off": "Av",
+                    "heat": "Varm",
+                    "boil": "Kok",
+                    "quick_heat": "Kjapp varming",
+                    "quick_boil": "Kjapp koking",
+                    "keep_warm": "Hold varm",
+                    "custom": "Egendefinert",
+                    "dechlorinate": "Avkalkning",
+                    "black_tea": "Svart te",
+                    "green_tea": "Grønn te",
+                    "coffee": "Kaffe",
+                    "honey_water": "Honningvann",
+                    "infant_formula": "Barnemat"
                 }
             },
             "language": {
@@ -430,6 +478,15 @@
                     "russian": "Русский",
                     "spanish": "Español",
                     "turkish": "Türkçe"
+                }
+            },
+            "light_mode": {
+                "name": "Lysmodus",
+                "state": {
+                    "off": "Av",
+                    "on": "På",
+                    "state": "Tilstand",
+                    "locator": "Lokaliser"
                 }
             },
             "mopping": {
@@ -493,6 +550,9 @@
                 "state": {
                     "cancel": "Avbryt",
                     "continuous": "Kontinuerlig",
+                    "30s": "30 sekunder",
+                    "1m": "1 minutt",
+                    "2m": "2 minutter",
                     "5m": "5 minutter",
                     "10m": "10 minutter",
                     "20m": "20 minutter",
@@ -661,7 +721,12 @@
                     "starting": "Starter",
                     "emptying": "Tømming",
                     "resetting": "Tilbakestilling",
-                    "reverse": "Revers"
+                    "reverse": "Revers",
+                    "full": "Full",
+                    "empty": "Tom",
+                    "missing": "Manglende",
+                    "formatting": "Formatering",
+                    "unformatted": "Uformaterte"
                 }
             },
             "time_remaining": {
@@ -742,6 +807,22 @@
         "text": {
             "scene": {
                 "name": "Scene"
+            }
+        },
+        "time": {
+            "timer": {
+                "name": "Timer"
+            },
+            "timer_x": {
+                "name": "Timer {x}"
+            }
+        },
+        "water_heater": {
+            "water_air": {
+                "name": "Vannvarmer"
+            },
+            "kettle": {
+                "name": "Vannkoker"
             }
         }
     }
