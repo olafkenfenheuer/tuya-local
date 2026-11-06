@@ -111,8 +111,7 @@ entities:
         name: sensor
         unit: min
   - entity: select
-    name: Light mode
-    icon: "mdi:palette"
+    translation_key: light_mode
     category: config
     dps:
       - id: 101
@@ -120,6 +119,6 @@ entities:
         name: option
         mapping:
           - dps_val: "1"
-            value: Multicolor
+            value: multi_color
           - dps_val: "2"
-            value: Chosen color
+            value: custom

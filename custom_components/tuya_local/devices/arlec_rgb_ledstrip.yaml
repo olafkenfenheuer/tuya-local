@@ -2,8 +2,7 @@ name: RGB light
 products:
   - id: jawcej1v
     manufacturer: Arlec
-    model: ALD261HA
-    name: USB strip light
+    model: ALD261HA USB
 entities:
   - entity: light
     dps:
@@ -72,20 +71,3 @@ entities:
         range:
           min: 0
           max: 86400
-  - entity: number
-    translation_key: timer
-    # 2025-07-20
-    deprecated: time.timer
-    class: duration
-    category: config
-    dps:
-      - id: 7
-        type: integer
-        name: value
-        unit: min
-        range:
-          min: 0
-          max: 86400
-        mapping:
-          - scale: 60
-            step: 60

@@ -1,16 +1,13 @@
-name: Bidirectional energy meter
+name: Bidirectional dual energy meter
 legacy_type: dcenta_dual_meter
 products:
   - id: z95s7p3z54xbsjnl
     manufacturer: MatSeePlus
-    name: Bidirectional 2 channel clamp meter
   - id: bbcg1hrkrj5rifsd
     manufacturer: MatSeePlus
-    name: Bidirectional 2 channel clamp meter
   - id: 81yrt3lo
     manufacturer: KKMoon
     model: PJ-1203A
-    name: Zigbee energy meter
 entities:
   - entity: sensor
     translation_key: energy_consumed
@@ -68,6 +65,10 @@ entities:
         class: measurement
         mapping:
           - scale: 10
+            constraint: direction
+            conditions:
+              - dps_val: REVERSE
+                scale: -10
       - id: 102
         type: string
         optional: true
@@ -91,6 +92,10 @@ entities:
         class: measurement
         mapping:
           - scale: 10
+            constraint: direction
+            conditions:
+              - dps_val: REVERSE
+                scale: -10
       - id: 104
         type: string
         optional: true
@@ -232,6 +237,14 @@ entities:
         class: measurement
         mapping:
           - scale: 1000
+            constraint: direction
+            conditions:
+              - dps_val: REVERSE
+                scale: -1000
+      - id: 102
+        type: string
+        optional: true
+        name: direction
       - id: 117
         type: integer
         name: calibration
@@ -251,6 +264,14 @@ entities:
         class: measurement
         mapping:
           - scale: 1000
+            constraint: direction
+            conditions:
+              - dps_val: REVERSE
+                scale: -1000
+      - id: 104
+        type: string
+        optional: true
+        name: direction
       - id: 123
         type: integer
         name: calibration

@@ -1,8 +1,11 @@
-name: SmartPlug
+name: Smartplug
 products:
   - id: e8dqdqxjgmilloml
     manufacturer: Nooie
     model: NSP21
+  - id: keyuh3jxk9wu8ruj
+    manufacturer: Tongou
+    model: TO-Q-SY2-JWT
 entities:
   - entity: switch
     class: outlet
@@ -20,23 +23,6 @@ entities:
         range:
           min: 0
           max: 86400
-  - entity: number
-    translation_key: timer
-    # 2025-07-20
-    deprecated: time.timer
-    category: config
-    class: duration
-    dps:
-      - id: 9
-        type: integer
-        name: value
-        unit: min
-        range:
-          min: 0
-          max: 86400
-        mapping:
-          - scale: 60
-            step: 60
   - entity: select
     translation_key: light_mode
     category: config

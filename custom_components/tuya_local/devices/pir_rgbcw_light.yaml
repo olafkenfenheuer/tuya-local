@@ -2,11 +2,9 @@ name: PIR RGBCW light
 products:
   - id: hbmq4wdi5vyx9qgu
     manufacturer: Kojima
-    name: Motion sensor nightlight
   - id: lgekqfxdabipm3tn
     manufacturer: Smartrul
     model: SMR-YD002W
-    name: PIR colorful nightlight
 entities:
   - entity: light
     dps:
@@ -198,23 +196,6 @@ entities:
         range:
           min: 0
           max: 86400
-  - entity: number
-    translation_key: timer
-    # 2025-07-20
-    deprecated: time.timer
-    class: duration
-    category: config
-    dps:
-      - id: 26
-        name: value
-        type: integer
-        range:
-          min: 0
-          max: 86400
-        unit: min
-        mapping:
-          - scale: 60
-            step: 60
   - entity: switch
     name: Manual mode
     category: config
@@ -246,7 +227,7 @@ entities:
           - dps_val: "none"
             value: false
   - entity: select
-    name: Motion distance
+    translation_key: motion_sensitivity
     category: config
     dps:
       - id: 54
@@ -254,11 +235,11 @@ entities:
         name: option
         mapping:
           - dps_val: "high"
-            value: "Far"
-          - dps_val: "low"
-            value: "Near"
+            value: high
           - dps_val: "middle"
-            value: "Medium"
+            value: medium
+          - dps_val: "low"
+            value: low
   - entity: number
     name: PIR delay
     category: config

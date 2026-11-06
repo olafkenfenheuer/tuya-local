@@ -3,7 +3,6 @@ products:
   - id: z1fcxdrpiazyjaky
     manufacturer: Moes
     model: CCP-S01-EU-WH-EN
-    name: Touchscreen control panel IR and Bluetooth hub
 entities:
   - entity: switch
     translation_key: switch_x
@@ -131,6 +130,12 @@ entities:
         type: string
         optional: true
         name: receive
+  - entity: infrared
+    dps:
+      - id: 201
+        type: string
+        optional: true
+        name: send
   - entity: number
     name: Voice volume
     category: config

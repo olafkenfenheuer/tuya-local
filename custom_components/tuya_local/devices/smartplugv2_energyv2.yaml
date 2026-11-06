@@ -10,6 +10,15 @@ products:
     model: STY-63TM
   - id: uvbhl96dsubgimll
     manufacturer: Almo
+  - id: dsbptnyuqso0uber
+    manufacturer: Aziot
+    model: 10A smart plug
+  - id: keyjup78v54myhan
+    manufacturer: GoLogi
+    model: IP44
+  - id: key7mapd9sdpyyf9
+    manufacturer: Blackt Electrotech
+    model: Smart Meter Pro Switch
 entities:
   - entity: switch
     class: outlet
@@ -43,23 +52,6 @@ entities:
         type: string
         name: random_timer
         optional: true
-  - entity: number
-    category: config
-    class: duration
-    translation_key: timer
-    # 2025-07-20
-    deprecated: time.timer
-    dps:
-      - id: 9
-        type: integer
-        name: value
-        unit: min
-        range:
-          min: 0
-          max: 86400
-        mapping:
-          - scale: 60
-            step: 60
   - entity: sensor
     category: diagnostic
     hidden: true
@@ -83,7 +75,6 @@ entities:
         name: sensor
         type: integer
         class: measurement
-        force: true
         unit: mA
       - id: 23
         type: integer
@@ -97,7 +88,6 @@ entities:
         name: sensor
         type: integer
         class: measurement
-        force: true
         unit: W
         mapping:
           - scale: 10
@@ -113,7 +103,6 @@ entities:
         name: sensor
         type: integer
         class: measurement
-        force: true
         unit: V
         mapping:
           - scale: 10
@@ -127,6 +116,7 @@ entities:
     dps:
       - id: 26
         type: bitfield
+        optional: true
         name: sensor
         mapping:
           - dps_val: 0
@@ -134,6 +124,7 @@ entities:
           - value: true
       - id: 26
         type: bitfield
+        optional: true
         name: fault_code
   - entity: select
     category: config
@@ -197,11 +188,32 @@ entities:
             value: locator
           - dps_val: "on"
             value: "on"
+  - entity: button
+    name: Refresh
+    icon: "mdi:sync"
+    category: config
+    dps:
+      - id: 66
+        type: string
+        optional: true
+        name: button
+        mapping:
+          - dps_val: online
+            value: true
+      - id: 66
+        type: string
+        optional: true
+        name: available
+        mapping:
+          - dps_val: null
+            value: false
+          - value: true
   - entity: binary_sensor
     name: Online
     class: connectivity
     hidden: unavailable
     category: diagnostic
+    deprecated: button_refresh  # 2026-06-29
     dps:
       - id: 66
         type: string

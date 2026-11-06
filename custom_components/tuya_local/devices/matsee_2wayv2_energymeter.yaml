@@ -2,7 +2,6 @@ name: Bidirectional energy meter
 products:
   - id: v5jlnn5hwyffkhp3
     manufacturer: MatSeePlus
-    name: Bidirectional 2 channel clamp meter
 entities:
   - entity: sensor
     class: energy
@@ -321,21 +320,6 @@ entities:
             value: true
           - dps_val: true
             value: false
-  - entity: sensor
-    name: Direction B
-    # 2025-01-29
-    deprecated: binary_sensor
-    class: enum
-    category: diagnostic
-    dps:
-      - id: 124
-        type: boolean
-        name: sensor
-        mapping:
-          - dps_val: true
-            value: in
-          - dps_val: false
-            value: out
   - entity: binary_sensor
     name: Direction A
     translation_key: direction
@@ -349,21 +333,6 @@ entities:
             value: true
           - dps_val: true
             value: false
-  - entity: sensor
-    name: Direction A
-    class: enum
-    # 2025-01-29
-    deprecated: binary_sensor
-    category: diagnostic
-    dps:
-      - id: 125
-        type: boolean
-        name: sensor
-        mapping:
-          - dps_val: true
-            value: in
-          - dps_val: false
-            value: out
   - entity: number
     name: Reporting rate
     class: duration

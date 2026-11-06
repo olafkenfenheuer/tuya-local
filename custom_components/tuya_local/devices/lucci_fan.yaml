@@ -1,8 +1,8 @@
-name: Ceiling Fan
+name: Ceiling fan
 products:
   - id: U8wU126HQlIeQHvS
     manufacturer: Lucci Connect
-    name: WiFi fan remote
+    model: WiFi fan remote
 entities:
   - entity: fan
     dps:
